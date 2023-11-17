@@ -120,8 +120,12 @@ app.get('/', (req, res) => {
   if (found) {
     res.send(`¡Que emoción! It is ${input}, sooo the recommended taco
     for you to eat is: ${recommendedTaco}`)
+
+    console.log("te toca comer un taco")
+
   } else {
     res.send('Not a taco month!!, AKA not possible, you just did not write a month')
+    console.log("no toca comer un taco")
   }
 })
   
