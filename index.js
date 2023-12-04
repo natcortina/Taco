@@ -21,7 +21,7 @@ import cors from 'cors';
 
 // Create an instance of an express application 
 const app = express()
-
+app.use(express.json())
 app.use(cors({
   origin: '*'
 }));
@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
  
   if (found) {
     // Send response
-    res.send(recommendedTaco);
+    res.json(recommendedTaco);
     console.log("te toca comer un taco");
   } else {
     res.send('Not a taco month!! AKA not possible, you just did not write a month');
