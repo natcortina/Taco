@@ -16,6 +16,9 @@ import express from 'express'
 //cats
 import cats from 'cat-ascii-faces';
 
+import cors from 'cors';
+
+
 
 // Create an instance of an express application 
 const app = express()
@@ -141,9 +144,15 @@ app.get('/catfaces', (req, res) => {
 
   // Send the JSON response
   res.json(randomCat);
+  console.log("gatito");
 });
 
 // Set the application to listen a port
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}` )
 })
+
+app.use(cors({
+  origin: '*'
+}));
+
