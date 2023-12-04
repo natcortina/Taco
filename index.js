@@ -19,7 +19,6 @@ import cats from 'cat-ascii-faces';
 import cors from 'cors';
 
 
-
 // Create an instance of an express application 
 const app = express()
 
@@ -27,10 +26,8 @@ app.use(cors({
   origin: '*'
 }));
 
-
 // Set the port 
 const port = process.env.PORT || 3001
-
 
 //start writing my own code AFTER THIS LINE 
 
@@ -49,7 +46,6 @@ const options = {
   "November": "Lengua",
   "December": "Tacos de Canasta"
 }
-
 
 
      //using the const months, that is what the user has to write after :3001/?
@@ -78,7 +74,7 @@ app.get('/', (req, res) => {
     res.send(recommendedTaco);
     console.log("te toca comer un taco");
   } else {
-    res.status(400).send('Not a taco month!! AKA not possible, you just did not write a month');
+    res.send('Not a taco month!! AKA not possible, you just did not write a month');
     console.log("no toca comer un taco");
   }
 })
