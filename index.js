@@ -23,6 +23,11 @@ import cors from 'cors';
 // Create an instance of an express application 
 const app = express()
 
+app.use(cors({
+  origin: '*'
+}));
+
+
 // Set the port 
 const port = process.env.PORT || 3001
 
@@ -151,8 +156,3 @@ app.get('/catfaces', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}` )
 })
-
-app.use(cors({
-  origin: '*'
-}));
-
