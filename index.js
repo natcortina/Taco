@@ -35,59 +35,6 @@ const port = process.env.PORT || 3001
 //start writing my own code AFTER THIS LINE 
 
 
-let optiontry = {
-  "0": {
-    name0: "January",
-    response0: "Carne Asada"
-  },
-  "1": {
-    name1: "February",
-    response1 : "Barbacoa"
-  },
-  "2": {
-    name1: "March",
-    response1 : "Birria"
-  },
-  "3": {
-    name1: "April",
-    response1 : "Al pastor"
-  },
-  "4": {
-    name1: "May",
-    response1 : "Tacos de mariscos"
-  },
-  "5": {
-    name1: "June",
-    response1 : "Tinga de pollo"
-  },
-  "6": {
-    name1: "July",
-    response1 : "Campechanos"
-  },
-  "7": {
-    name1: "August",
-    response1 : "Carnitas"
-  },
-  "8": {
-    name1: "September",
-    response1 : "Cochinita Pibil"
-  },
-  "9": {
-    name1: "October",
-    response1 : "Nopales"
-  },
-  "10": {
-    name1: "November",
-    response1 : "Lengua"
-  },
-  "11": {
-    name1: "December",
-    response1 : "Tacos de Canasta"
-  }
-
-
-}
-
 const options = {
   "January": "Carne Asada",
   "February": "Barbacoa",
@@ -125,16 +72,14 @@ app.get('/', (req, res) => {
     }
   })
 
-  let x = `Que emocin! It is ${input}, sooo the recommended taco
-  for you to eat is: ${recommendedTaco}`
+ 
   if (found) {
-    res.send(x)
-
-    console.log("te toca comer un taco")
-
+    // Send response
+    res.send(recommendedTaco);
+    console.log("te toca comer un taco");
   } else {
-    res.send('Not a taco month!!, AKA not possible, you just did not write a month')
-    console.log("no toca comer un taco")
+    res.status(400).send('Not a taco month!! AKA not possible, you just did not write a month');
+    console.log("no toca comer un taco");
   }
 })
   
