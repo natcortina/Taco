@@ -125,9 +125,10 @@ app.get('/', (req, res) => {
     }
   })
 
+  let x = `Que emocin! It is ${input}, sooo the recommended taco
+  for you to eat is: ${recommendedTaco}`
   if (found) {
-    res.send(`Que emoción! It is ${input}, sooo the recommended taco
-    for you to eat is: ${recommendedTaco}`)
+    res.send(x)
 
     console.log("te toca comer un taco")
 
